@@ -160,15 +160,16 @@ http://localhost/ms-academy/
 
 ### Página Inicial
 
-> *(adicione um print)*
+> *<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c2d39f46-b25a-46f3-89c7-7441d8d34dbf" />*
+
 
 ### Dashboard
 
-> *(adicione um print)*
+> *<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/759770af-5614-422d-be5d-3628c7d9c35e" />*
 
 ### CRUD de Conteúdos
 
-> *(adicione um print)*
+> *<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/96f7f019-8bbb-4dae-b5a4-46471e6ac90d" />*
 
 ---
 
