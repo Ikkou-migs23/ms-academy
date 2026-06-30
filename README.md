@@ -1,7 +1,8 @@
 # 🎓 MS Academy
 
 > Plataforma web gratuita para disponibilização de conteúdos do Ensino Médio, com área administrativa para gerenciamento de disciplinas, conteúdos, vídeos e quizzes.
-
+https://ms-academy.free.je/
+> 
 ---
 
 ## 📌 Sobre o projeto
