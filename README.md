@@ -160,7 +160,7 @@ http://localhost/ms-academy/
 
 ### Página Inicial
 
-> *<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c2d39f46-b25a-46f3-89c7-7441d8d34dbf" />*
+> *<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6a253c19-e413-48dd-ba10-8a3a3f6305bc" />*
 
 
 ### Dashboard
