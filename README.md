@@ -1,113 +1,189 @@
-# MS Academy — Instruções de Instalação
+# 🎓 MS Academy
 
-## Requisitos
-- PHP 8.0+
-- MySQL 5.7+ / MariaDB 10.3+
-- Apache com `mod_rewrite` habilitado
-- XAMPP / LAMP / InfinityFree
+> Plataforma web gratuita para disponibilização de conteúdos do Ensino Médio, com área administrativa para gerenciamento de disciplinas, conteúdos, vídeos e quizzes.
 
 ---
 
-## 1. Banco de Dados
+## 📌 Sobre o projeto
 
-1. Abra o phpMyAdmin (ou cliente MySQL)
-2. Execute o arquivo `bd-msacademy.sql` para criar o banco e as tabelas
-3. O banco será criado com o nome `msacademy`
+O **MS Academy** é uma aplicação web desenvolvida em PHP e MySQL com o objetivo de disponibilizar gratuitamente conteúdos didáticos para estudantes do Ensino Médio.
 
----
+O sistema é dividido em duas áreas independentes:
 
-## 2. Configurar a Conexão
+- 🌐 Área pública destinada aos estudantes;
+- 🔐 Painel administrativo para gerenciamento do conteúdo.
 
-Edite o arquivo `includes/conexao.php`:
-
-```php
-$host     = "localhost";
-$user     = "root";       // seu usuário MySQL
-$password = "";           // sua senha MySQL
-$database = "msacademy";
-```
+O projeto foi desenvolvido como forma de consolidar conhecimentos em desenvolvimento web, banco de dados, autenticação, CRUD e deploy.
 
 ---
 
-## 3. Copiar para o Servidor
+## ✨ Funcionalidades
 
-Coloque a pasta `ms-academy/` dentro de:
-- **XAMPP:** `C:/xampp/htdocs/ms-academy/`
-- **LAMP:** `/var/www/html/ms-academy/`
-- **InfinityFree:** raiz do `htdocs/`
+### Área Pública
 
----
+- 📚 Visualização das disciplinas cadastradas
+- 📄 Acesso aos conteúdos
+- 🎥 Vídeos complementares
+- 🔍 Pesquisa de conteúdos
+- ❓ Quiz interativo
+- 📊 Resultado imediato do quiz
 
-## 4. Criar o Primeiro Administrador
+### Área Administrativa
 
-1. Edite `criar_admin.php` e defina nome, e-mail e senha
-2. Acesse: `http://localhost/ms-academy/criar_admin.php`
-3. **APAGUE** o arquivo `criar_admin.php` imediatamente após!
-
----
-
-## 5. Acessar o Sistema
-
-| URL | Descrição |
-|-----|-----------|
-| `http://localhost/ms-academy/` | Site público |
-| `http://localhost/ms-academy/admin/` | Painel admin |
-| `http://localhost/ms-academy/admin/login.php` | Login admin |
+- Login protegido por sessão
+- Dashboard administrativo
+- CRUD de Disciplinas
+- CRUD de Conteúdos
+- CRUD de Vídeos
+- CRUD de Perguntas
+- CRUD de Alternativas
 
 ---
 
-## Estrutura de Diretórios
+## 🛠 Tecnologias utilizadas
 
-```
+### Backend
+
+- PHP 8
+- mysqli
+- Composer
+- Dotenv
+
+### Frontend
+
+- HTML5
+- CSS3
+- JavaScript
+
+### Banco de Dados
+
+- MySQL
+
+### Hospedagem
+
+- InfinityFree
+
+---
+
+## 📂 Estrutura do Projeto
+
+```text
 ms-academy/
-├── index.php               ← Home pública
-├── disciplina.php          ← Página da disciplina
-├── conteudo.php            ← Página do conteúdo
-├── quiz.php                ← Quiz interativo
-├── resultado.php           ← Resultado do quiz
-├── criar_admin.php         ← Script único (apagar após uso!)
-├── .htaccess
 │
 ├── admin/
-│   ├── index.php           ← Dashboard
-│   ├── login.php
-│   ├── logout.php
-│   ├── disciplina/         ← CRUD disciplinas
-│   ├── conteudo/           ← CRUD conteúdos + editor WYSIWYG
-│   ├── video/              ← CRUD vídeos YouTube
-│   ├── pergunta/           ← CRUD perguntas do quiz
-│   └── alternativa/        ← CRUD alternativas
-│
-├── includes/
-│   ├── conexao.php         ← Conexão com o banco
-│   ├── funcoes.php         ← Funções reutilizáveis
-│   ├── auth.php            ← Controle de sessão
-│   ├── header.php          ← Cabeçalho público
-│   ├── footer.php          ← Rodapé público
-│   └── menu.php            ← Navegação pública
-│
 ├── assets/
-│   ├── css/style.css       ← Estilos globais
-│   ├── js/
-│   └── img/
-│
 ├── editor/
-│   └── editor.js           ← Editor WYSIWYG
-│
-└── uploads/                ← Imagens enviadas (futuro)
+├── includes/
+├── vendor/
+├── index.php
+├── disciplina.php
+├── conteudo.php
+├── quiz.php
+├── resultado.php
+└── config.php
 ```
 
 ---
 
-## Fluxo do Quiz (RN04)
+## 🚀 Instalação
 
-As respostas do quiz **não são salvas no banco de dados**. O resultado é calculado em JavaScript no navegador e armazenado temporariamente em `sessionStorage`, sendo exibido na página de resultado. Ao fechar o navegador os dados são descartados automaticamente.
+### 1. Clone o projeto
+
+```bash
+git clone https://github.com/SEU-USUARIO/ms-academy.git
+```
 
 ---
 
-## Segurança
+### 2. Instale as dependências
 
-- Todas as queries usam **Prepared Statements** (proteção contra SQL Injection)
-- Dados exibidos passam por `htmlspecialchars()` via função `h()`
-- Área admin protegida por **sessão PHP**
-- `.htaccess` bloqueia listagem de diretórios e acesso às pastas internas
+```bash
+composer install
+```
+
+---
+
+### 3. Configure o ambiente
+
+Crie um arquivo `.env` na raiz:
+
+```env
+DB_HOST=localhost
+DB_NAME=msacademy
+DB_USER=root
+DB_PASS=sua_senha
+```
+
+---
+
+### 4. Importe o banco
+
+Execute o arquivo
+
+```
+msacademy.sql
+```
+
+no phpMyAdmin ou MySQL Workbench.
+
+---
+
+### 5. Execute
+
+XAMPP
+
+```
+http://localhost/ms-academy/
+```
+
+ou
+
+LAMP
+
+```
+http://localhost/ms-academy/
+```
+
+---
+
+## 🔒 Segurança
+
+- Prepared Statements (`mysqli`)
+- Proteção contra SQL Injection
+- Escape de HTML (`htmlspecialchars`)
+- Autenticação por sessão
+- Variáveis sensíveis armazenadas em `.env`
+
+---
+
+## 📸 Capturas de Tela
+
+### Página Inicial
+
+> *(adicione um print)*
+
+### Dashboard
+
+> *(adicione um print)*
+
+### CRUD de Conteúdos
+
+> *(adicione um print)*
+
+---
+
+## 📈 Melhorias Futuras (v2.0)
+
+- Upload de imagens
+- URLs amigáveis
+- Editor de texto aprimorado
+- Paginação
+- Dashboard com estatísticas
+- Melhor responsividade
+- Área do aluno
+
+---
+
+## 👨‍💻 Autor
+
+Desenvolvido por **Miguel** como projeto de estudo e portfólio.
